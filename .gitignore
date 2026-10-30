@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Production build
+dist/
+frontend/dist/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+backend/__pycache__/
+backend/app/**/__pycache__/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Database & temp
+*.db
+backend/spotify_lab.db
+.DS_Store
+Thumbs.db
