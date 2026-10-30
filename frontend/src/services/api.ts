@@ -11,7 +11,8 @@ import {
   ClusterEvaluation
 } from '../types';
 
-const API_BASE = `${(import.meta.env.VITE_API_BASE ?? '').replace(/\/+$/, '')}/api`;
+const apiHost = import.meta.env.VITE_API_HOST?.replace(/^https?:\/\//, '').replace(/\/+$/, '');
+const API_BASE = apiHost ? `https://${apiHost}/api` : '/api';
 
 const client = axios.create({
   baseURL: API_BASE,
