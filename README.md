@@ -39,3 +39,11 @@ Access in browser: `http://127.0.0.1:5173/`
 # project-2
 # project-2
 # project-2
+
+## ☁️ Deploying to Render
+
+1. In Render, choose **New → Blueprint** and connect this GitHub repository.
+2. Select the repository and deploy the services defined in `render.yaml`.
+3. Open the `spotify-genre-lab-frontend` service URL when both services finish deploying.
+
+The Blueprint creates a FastAPI service, a static frontend, and a 1 GB persistent disk for the SQLite favorites and saved recommendations database. The API service uses Render's Starter plan because persistent disks require a paid instance. The initial API startup loads and analyzes the Spotify dataset, so its first deploy may take several minutes.
