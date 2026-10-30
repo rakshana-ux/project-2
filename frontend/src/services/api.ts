@@ -12,7 +12,10 @@ import {
 } from '../types';
 
 const apiHost = import.meta.env.VITE_API_HOST?.replace(/^https?:\/\//, '').replace(/\/+$/, '');
-const API_BASE = apiHost ? `https://${apiHost}/api` : '/api';
+const apiDomain = apiHost && !apiHost.endsWith('.onrender.com')
+  ? `${apiHost}.onrender.com`
+  : apiHost;
+const API_BASE = apiDomain ? `https://${apiDomain}/api` : '/api';
 
 const client = axios.create({
   baseURL: API_BASE,
