@@ -46,4 +46,4 @@ Access in browser: `http://127.0.0.1:5173/`
 2. Select the repository and deploy the services defined in `render.yaml`.
 3. Open the `spotify-genre-lab-frontend` service URL when both services finish deploying.
 
-The Blueprint creates a FastAPI service, a static frontend, and a 1 GB persistent disk for the SQLite favorites and saved recommendations database. The API service uses Render's Starter plan because persistent disks require a paid instance. The initial API startup loads and analyzes the Spotify dataset, so its first deploy may take several minutes.
+The Blueprint creates a free FastAPI service and a static frontend. SQLite favorites and saved recommendations use the service's temporary filesystem and may be lost when the service restarts or redeploys. The free API service may spin down when idle, and the initial startup loads and analyzes the Spotify dataset, so its first deploy (or a wake after inactivity) may take several minutes.

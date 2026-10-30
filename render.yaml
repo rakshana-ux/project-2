@@ -2,17 +2,10 @@ services:
   - type: web
     name: spotify-genre-lab-api
     runtime: python
-    plan: starter
+    plan: free
     rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-    envVars:
-      - key: DATABASE_PATH
-        value: /var/data/spotify_lab.db
-    disk:
-      name: spotify-genre-lab-data
-      mountPath: /var/data
-      sizeGB: 1
 
   - type: web
     name: spotify-genre-lab-frontend
