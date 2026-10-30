@@ -87,10 +87,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, favor
   ];
 
   return (
-    <aside className="w-64 min-h-screen bg-gray-950/95 border-r border-white/5 flex flex-col justify-between p-4 sticky top-0 z-40 select-none">
+    <aside className="w-full md:w-64 min-h-0 md:min-h-screen bg-gray-950/95 border-b md:border-b-0 md:border-r border-white/5 flex flex-col justify-between p-2 md:p-4 sticky top-0 z-40 select-none">
       <div>
         {/* Brand Header */}
-        <div className="flex items-center gap-3 px-3 py-4 mb-4">
+        <div className="flex items-center gap-3 px-2 md:px-3 py-2 md:py-4 mb-1 md:mb-4">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-green-400 flex items-center justify-center shadow-lg shadow-emerald-500/25">
             <Music2 className="w-5 h-5 text-black font-bold" />
           </div>
@@ -105,13 +105,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, favor
         </div>
 
         {/* Navigation Menus */}
-        <div className="space-y-6">
+        <div className="flex gap-2 overflow-x-auto pb-1 md:block md:space-y-6">
           {menuGroups.map((group, gIdx) => (
-            <div key={gIdx}>
-              <p className="px-3 text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">
+            <div key={gIdx} className="contents md:block">
+              <p className="hidden px-3 text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2 md:block">
                 {group.group}
               </p>
-              <div className="space-y-1">
+              <div className="flex shrink-0 gap-1 md:block md:space-y-1">
                 {group.items.map((item) => {
                   const Icon = item.icon;
                   const isActive = activeTab === item.id;
@@ -119,7 +119,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, favor
                     <button
                       key={item.id}
                       onClick={() => setActiveTab(item.id)}
-                      className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium transition-all ${
+                      className={`w-auto shrink-0 flex items-center justify-between px-3 py-2 md:w-full md:py-2.5 rounded-xl text-xs font-medium transition-all ${
                         isActive
                           ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold shadow-sm shadow-emerald-500/10'
                           : 'text-gray-400 hover:text-white hover:bg-gray-900/60'
@@ -158,7 +158,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, favor
       </div>
 
       {/* Dataset & System Status */}
-      <div className="pt-4 border-t border-white/5 px-2">
+      <div className="hidden pt-4 border-t border-white/5 px-2 md:block">
         <div className="p-3 rounded-xl bg-gray-900/60 border border-white/5 text-xs">
           <div className="flex items-center justify-between mb-1.5">
             <span className="text-gray-400 text-[11px]">ML Status</span>

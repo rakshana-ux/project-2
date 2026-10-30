@@ -74,35 +74,35 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="h-20 bg-gray-950/70 backdrop-blur-xl border-b border-white/5 sticky top-0 z-30 px-8 flex items-center justify-between">
-      <div>
+    <header className="min-h-20 bg-gray-950/70 backdrop-blur-xl border-b border-white/5 sticky top-0 z-30 px-4 py-3 md:px-8 md:py-0 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+      <div className="min-w-0">
         <h2 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
           {current.title}
         </h2>
-        <p className="text-xs text-gray-400 mt-0.5">{current.subtitle}</p>
+        <p className="text-xs text-gray-400 mt-0.5 line-clamp-2 md:line-clamp-1">{current.subtitle}</p>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex w-full md:w-auto items-center gap-2 md:gap-4">
         {/* Fast Global Search */}
-        <form onSubmit={handleSearchSubmit} className="relative">
+        <form onSubmit={handleSearchSubmit} className="relative flex-1 md:flex-none">
           <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
             placeholder="Search song or artist..."
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
-            className="w-64 pl-9 pr-4 py-2 bg-gray-900/80 border border-white/10 rounded-full text-xs text-gray-200 placeholder-gray-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition"
+            className="w-full md:w-64 pl-9 pr-4 py-2 bg-gray-900/80 border border-white/10 rounded-full text-xs text-gray-200 placeholder-gray-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition"
           />
         </form>
 
         {/* Live System Indicators */}
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-900/80 border border-white/10 text-xs text-gray-300">
+        <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-900/80 border border-white/10 text-xs text-gray-300">
           <Database className="w-3.5 h-3.5 text-emerald-400" />
           <span className="font-semibold text-white">32,833</span>
           <span className="text-gray-400 text-[11px]">Songs</span>
         </div>
 
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300">
+        <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300">
           <Cpu className="w-3.5 h-3.5 text-emerald-400" />
           <span className="text-xs font-mono">FastAPI + Scikit-Learn</span>
         </div>

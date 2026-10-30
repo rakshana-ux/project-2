@@ -76,7 +76,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#080b11] text-gray-100 antialiased selection:bg-emerald-500 selection:text-black">
+    <div className="flex flex-col md:flex-row min-h-screen bg-[#080b11] text-gray-100 antialiased selection:bg-emerald-500 selection:text-black">
       {/* Sidebar Navigation */}
       <Sidebar
         activeTab={activeTab}
@@ -91,7 +91,7 @@ export const App: React.FC = () => {
           onOpenRecommenderWithQuery={handleGlobalSearch}
         />
 
-        <main className="flex-1 p-8 max-w-7xl w-full mx-auto">
+        <main className="flex-1 min-w-0 p-4 md:p-8 max-w-7xl w-full mx-auto">
           {activeTab === 'dashboard' && (
             <Dashboard
               onSelectSong={handleSelectSong}

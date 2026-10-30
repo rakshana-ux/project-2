@@ -98,14 +98,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ onSelectSong, onNavigateTo
   ];
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-300">
+    <div className="min-w-0 space-y-6 md:space-y-8 animate-in fade-in duration-300">
       {/* Hero Welcome Banner */}
-      <div className="relative overflow-hidden rounded-3xl p-8 bg-gradient-to-r from-emerald-950/60 via-gray-900/80 to-gray-900/90 border border-emerald-500/20 shadow-2xl">
+      <div className="relative overflow-hidden rounded-3xl p-5 md:p-8 bg-gradient-to-r from-emerald-950/60 via-gray-900/80 to-gray-900/90 border border-emerald-500/20 shadow-2xl">
         <div className="relative z-10 max-w-2xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-3">
             <Radio className="w-3.5 h-3.5 animate-pulse text-emerald-400" /> Live Analytical Telemetry
           </div>
-          <h1 className="text-3xl font-extrabold text-white tracking-tight mb-2">
+          <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-2">
             Spotify Music Intelligence & Recommendation Engine
           </h1>
           <p className="text-gray-300 text-sm leading-relaxed">
@@ -116,13 +116,13 @@ export const Dashboard: React.FC<DashboardProps> = ({ onSelectSong, onNavigateTo
       </div>
 
       {/* KPI Stats Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
         {kpis.map((kpi, idx) => {
           const Icon = kpi.icon;
           return (
             <div
               key={idx}
-              className="glass-panel p-5 rounded-2xl border border-white/5 hover:border-white/10 transition group"
+              className="glass-panel p-4 md:p-5 rounded-2xl border border-white/5 hover:border-white/10 transition group"
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-medium text-gray-400">{kpi.label}</span>
@@ -141,7 +141,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onSelectSong, onNavigateTo
       {/* Primary Analytics Charts Row */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Genre Distribution Chart */}
-        <div className="glass-panel p-6 rounded-2xl border border-white/5 lg:col-span-2">
+        <div className="glass-panel min-w-0 p-4 md:p-6 rounded-2xl border border-white/5 lg:col-span-2">
           <div className="flex justify-between items-center mb-6">
             <div>
               <h3 className="text-base font-bold text-white">Genre Distribution & Song Counts</h3>
@@ -171,7 +171,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onSelectSong, onNavigateTo
         </div>
 
         {/* Feature Radar Overview */}
-        <div className="glass-panel p-6 rounded-2xl border border-white/5">
+        <div className="glass-panel min-w-0 p-4 md:p-6 rounded-2xl border border-white/5">
           <div className="mb-4">
             <h3 className="text-base font-bold text-white">Audio Feature Signature</h3>
             <p className="text-xs text-gray-400">Dataset averages vs. global pop benchmark</p>
@@ -194,7 +194,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onSelectSong, onNavigateTo
       {/* Genre Comparison & Top Artists */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Genre Popularity & Energy */}
-        <div className="glass-panel p-6 rounded-2xl border border-white/5">
+        <div className="glass-panel min-w-0 p-4 md:p-6 rounded-2xl border border-white/5">
           <h3 className="text-base font-bold text-white mb-1">Genre Popularity vs Energy</h3>
           <p className="text-xs text-gray-400 mb-6">Cross-comparison of average commercial popularity and acoustic energy</p>
           <div className="h-64">
@@ -213,7 +213,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onSelectSong, onNavigateTo
         </div>
 
         {/* Top 10 Artists */}
-        <div className="glass-panel p-6 rounded-2xl border border-white/5">
+        <div className="glass-panel min-w-0 p-4 md:p-6 rounded-2xl border border-white/5">
           <h3 className="text-base font-bold text-white mb-1">Top 10 Prolific Artists</h3>
           <p className="text-xs text-gray-400 mb-6">Artists with the highest track representation in the catalog</p>
           <div className="h-64">
@@ -232,7 +232,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onSelectSong, onNavigateTo
       </div>
 
       {/* Top 10 Popular Songs Table */}
-      <div className="glass-panel p-6 rounded-2xl border border-white/5">
+      <div className="glass-panel min-w-0 p-4 md:p-6 rounded-2xl border border-white/5">
         <div className="flex justify-between items-center mb-6">
           <div>
             <h3 className="text-base font-bold text-white">Top 10 Most Popular Spotify Songs</h3>
